@@ -1,7 +1,7 @@
 'use strict';
 
-var assetsAppo = angular.module('assetsApp', []);
-assetsAppo.factory('geoLocation', function ($rootScope, phonegapReady) {
+angular.module('assetsApp')
+  .service('geolocation', function ($rootScope, phonegapReady) {
     return {
       getCurrentPosition: phonegapReady(function (onSuccess, onError, options) {
         navigator.geolocation.getCurrentPosition(function () {

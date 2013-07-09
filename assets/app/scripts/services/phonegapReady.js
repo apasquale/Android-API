@@ -1,7 +1,7 @@
 'use strict';
 
-var assetsAppo = angular.module('assetsApp', []);
-assetsAppo.factory('phonegapReady', function ($rootScope) {
+angular.module('assetsApp')
+  .service('phonegapReady', function () {	
     return function (fn) {
       var queue = [];
 
