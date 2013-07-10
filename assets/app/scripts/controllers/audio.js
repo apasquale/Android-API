@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('assetsApp')
-  .controller('AudioCtrl', function ($scope) {
+  .controller('AudioCtrl', function ($scope, audioSvc) {
     /*
     $scope.awesomeThings = [
 
@@ -11,10 +11,6 @@ angular.module('assetsApp')
     ];*/
     $scope.captureAudio = function() {
         console.log('AudioCtrl: captureAudio') ;
-        $scope.audiofiles  = [
-            {'name': 'HTML5 Boilerplate', 'path': '/sdcard/recording-2018408779.3gpp'},
-            {'name': 'AngularJS', 'path': '/sdcard/recording-2018408779.3gpp'},
-            {'name': 'Karma', 'path': '/sdcard/recording-2018408779.3gpp'}
-        ];
+        $scope.audiofiles  =  audioSvc.captureAudio();
     }
   });
