@@ -1,11 +1,18 @@
 <a href="#/">Home</a>
   <a href="#/camera">Camera</a>
   <a href="#/audio">Audio</a>
- <p>This is the camera view.</p>
-<button onclick="capturePhoto();">Capture Photo</button> <br>
+  <p>This is the camera view.</p>
+  <br/>
+  
+  <button ng-click="takePhoto()">Take Photo</button><br/>
+  <button ng-click="getPhoto(pictureSource.SAVEDPHOTOALBUM)">Get From Photo Library</button><br/>
+  <button ng-click="getPhoto(pictureSource.PHOTOLIBRARY)">Get From Photo Album</button><br/>
+  <img ng-src="{{image}}"/>
+
+<!--<button onclick="capturePhoto();">Capture Photo</button> <br>
 <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
 <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
 <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
   
 <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-<img style="display:none;" id="largeImage" src="" /> 
+<img style="display:none;" id="largeImage" src="" /> -->

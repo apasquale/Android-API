@@ -8,7 +8,8 @@ app.config(function ($routeProvider) {
         controller: 'MainCtrl'
       })
       .when('/camera', {
-        templateUrl: 'views/camera.html'
+        templateUrl: 'views/camera.html',
+        controller: 'CameraCtrl'
       })
       .when('/audio', {
         templateUrl: 'views/audio.html'
