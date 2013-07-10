@@ -8,6 +8,7 @@ angular.module('assetsApp')
 	    		return 'http://placehold.it/200x100';
 	        },
 	        getPhoto: function(source) {
+	        	console.log('cameraSvc: getPhoto('+source+')');
 	        	return 'http://placehold.it/100x100';
 	        }
 	    };

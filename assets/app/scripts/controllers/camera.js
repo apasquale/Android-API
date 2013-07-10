@@ -5,13 +5,17 @@ angular.module('assetsApp')
 	  $scope.nickname = 'Jess';
 	  
 	  $scope.image = 'http://placehold.it/350x150';
-	  $scope.takePhoto = function(name) {
+	  $scope.takePhoto = function() {
 		  console.log('function arg: ' + name);
 		  console.log('nickname: ' + $scope.nickname);
 		  $scope.image = cameraSvc.takePhoto();
 	  }
-	  $scope.getPhoto = function(source) {
-		  console.log('Controller source: ' + source);
-		  $scope.image = cameraSvc.getPhoto(source);
+	  $scope.getPhotoFromLibrary = function() {
+		  console.log('Controller: getPhotoFromLibrary');
+		  $scope.image = cameraSvc.getPhoto(pictureSource.PHOTOLIBRARY);
+	  }
+	  $scope.getPhotoFromAlbum = function() {
+		  console.log('Controller: getPhotoFromAlbum');
+		  $scope.image = cameraSvc.getPhoto(pictureSource.SAVEDPHOTOALBUM);
 	  }
   });
