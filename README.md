@@ -1,4 +1,5 @@
 Android-API
 ===========
 
-Test code for android API programming using Yeoman and AngularJS
+Test code for learning android API programming using Yeoman and AngularJS and PhoneGap
+
