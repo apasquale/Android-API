@@ -7,7 +7,7 @@
     <div class="audiofile"  ng-repeat="audiofile in audiofiles">
         {{ audiofile.name }} <br/>
         <audio controls>
-            <source src={{audiofile.path}}>
+            <source src={{audiofile.fullPath}}>
         </audio><br/>
     </div>
 </div>

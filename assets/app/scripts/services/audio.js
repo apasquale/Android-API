@@ -6,16 +6,18 @@ angular.module('assetsApp')
             captureAudio: function() {
                 console.log('audioSvc: captureAudio') ;
                 var deferred = $q.defer();
-
-                setTimeout(function() {
-                    $rootScope.$apply(function() {
-                        deferred.resolve([
-                            {'name': 'HTML5 Boilerplate', 'path': '/sdcard/recording-2018408779.3gpp'},
-                            {'name': 'AngularJS', 'path': '/sdcard/recording-2018408779.3gpp'},
-                            {'name': 'Karma', 'path': '/sdcard/recording-2018408779.3gpp'}
-                        ]);
-                    });
-                }, 1000);
+                navigator.device.capture.captureAudio(
+                    function(mediaFiles) {
+                        $rootScope.$apply(function() {
+                            deferred.resolve(mediaFiles);
+                        });
+                    },
+                    function captureError(error) {
+                        var msg = 'An error occurred during capture: ' + error.code;
+                        alert(msg, null, 'Uh oh!');
+                    },
+                    {limit: 2}
+                );
 
                 return deferred.promise;
             }
