@@ -11,6 +11,13 @@ angular.module('assetsApp')
     ];*/
     $scope.captureAudio = function() {
         console.log('AudioCtrl: captureAudio') ;
-        $scope.audiofiles  =  audioSvc.captureAudio();
+        //$scope.audiofiles  =  audioSvc.captureAudio();
+        audioSvc.captureAudio().then(function(audioFiles) {
+            console.log('AudioCtrl: Success');
+            $scope.audiofiles = audioFiles;
+        }, function(reason) {
+            console.log('AudioCtrl: Failed');
+            alert('Failed: ' + reason);
+        });
     }
   });

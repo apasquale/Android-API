@@ -5,7 +5,7 @@
 <button ng-click="captureAudio()">Capture Audio</button><br/>
 <div id="audiofiles">
     <div class="audiofile"  ng-repeat="audiofile in audiofiles">
-        {{ audiofile.name }}
+        {{ audiofile.name }} <br/>
         <audio controls>
             <source src={{audiofile.path}}>
         </audio><br/>
