@@ -8,7 +8,13 @@ angular.module('assetsApp')
 	  $scope.takePhoto = function() {
 		  console.log('function arg: ' + name);
 		  console.log('nickname: ' + $scope.nickname);
-		  $scope.image = cameraSvc.takePhoto();
+          cameraSvc.takePhoto().then(function(greeting) {
+              console.log('Controller: Success');
+              $scope.image = greeting;
+          }, function(reason) {
+              console.log('Controller: Failed');
+              alert('Failed: ' + reason);
+          });
 	  }
 	  $scope.getPhotoFromLibrary = function() {
 		  console.log('Controller: getPhotoFromLibrary');
