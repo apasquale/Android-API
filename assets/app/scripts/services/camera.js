@@ -5,15 +5,22 @@ angular.module('assetsApp')
 	    return {
 	        takePhoto: function() {
 	        	console.log('cameraSvc: takePhoto()');
-	    		//return 'http://placehold.it/200x100';
-                var deferred = $q.defer();
 
-                setTimeout(function() {
-                    console.log('cameraSvc: takePhoto: Success');
-                    $rootScope.$apply(function() {
-                        deferred.resolve('http://placehold.it/200x100');
-                    })
-                }, 1000);
+                var deferred = $q.defer();
+                navigator.camera.getPicture(
+                    function(imageURI) {
+                        console.log('cameraSvc: takePhoto: Success');
+                        $rootScope.$apply(function() {
+                            deferred.resolve(imageURI);
+                        })
+                    },
+                    function(message) {
+                        $rootScope.$apply(function() {
+                            deferred.reject(message);
+                        })
+                    },
+                    { quality: 50, destinationType: destinationType.FILE_URI }
+                );
 
                 return deferred.promise;
 	        },
