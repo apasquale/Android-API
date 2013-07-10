@@ -28,12 +28,20 @@ angular.module('assetsApp')
 	        	console.log('cameraSvc: getPhoto('+source+')');
 	        	var deferred = $q.defer();
 
-                setTimeout(function() {
-                    console.log('cameraSvc: getPhoto: Success');
-                    $rootScope.$apply(function() {
-                        deferred.resolve('http://placehold.it/100x100');
-                    })
-                }, 1000);
+                navigator.camera.getPicture(
+                    function(imageURI) {
+                        console.log('cameraSvc: takePhoto: Success');
+                        $rootScope.$apply(function() {
+                            deferred.resolve(imageURI);
+                        })
+                    },
+                    function(message) {
+                        $rootScope.$apply(function() {
+                            deferred.reject(message);
+                        })
+                    },
+                    { quality: 50, destinationType: destinationType.FILE_URI, sourceType: source }
+                );
 
                 return deferred.promise;
 	        }

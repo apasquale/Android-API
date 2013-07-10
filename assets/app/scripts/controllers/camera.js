@@ -6,7 +6,6 @@ angular.module('assetsApp')
 	  
 	  $scope.image = 'http://placehold.it/350x150';
 	  $scope.takePhoto = function() {
-		  console.log('function arg: ' + name);
 		  console.log('nickname: ' + $scope.nickname);
           cameraSvc.takePhoto().then(function(greeting) {
               console.log('Controller: Success');
