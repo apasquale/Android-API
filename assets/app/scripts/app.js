@@ -12,7 +12,8 @@ app.config(function ($routeProvider) {
         controller: 'CameraCtrl'
       })
       .when('/audio', {
-        templateUrl: 'views/audio.html'
+        templateUrl: 'views/audio.html',
+        controller: 'AudioCtrl'
       })
       .otherwise({
         redirectTo: '/'
