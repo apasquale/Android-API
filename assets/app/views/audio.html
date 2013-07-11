@@ -1,13 +1,15 @@
-<a href="#/">Home</a>
-<a href="#/camera">Camera</a>
-<a href="#/audio">Audio</a>
-<p>This is the audio view.</p>
-<button ng-click="captureAudio()">Capture Audio</button><br/>
-<div id="audiofiles">
-    <div class="audiofile"  ng-repeat="audiofile in audiofiles">
-        {{ audiofile.name }} <br/>
-        <audio controls>
-            <source src={{audiofile.fullPath}}>
-        </audio><br/>
+<div class="hero-unit" >
+    <a href="#/">Home</a>
+    <a href="#/camera">Camera</a>
+    <a href="#/audio">Audio</a>   <br/>
+    This is the camera view.<br/>
+    <button ng-click="captureAudio()">Capture Audio</button><br/>
+    <div id="audiofiles">
+        <div class="audiofile"  ng-repeat="audiofile in audiofiles">
+            {{ audiofile.name }} <br/>
+            <audio controls>
+                <source src={{audiofile.fullPath}}>
+            </audio><br/>
+        </div>
     </div>
 </div>

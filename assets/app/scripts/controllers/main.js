@@ -1,11 +1,30 @@
 angular.module('assetsApp')
-	.controller('MainCtrl', function($scope) {
+	.controller('MainCtrl', function($scope, $rootScope) {
 //  .controller('MainCtrl', function($scope, geolocation) {
   $scope.awesomeThings = [
     'HTML5 Boilerplate',
     'AngularJS',
     'Testacular'
   ];
+
+  $scope.image1 = 'http://placehold.it/350x150';
+  $scope.image2 = 'http://placehold.it/100x100';
+
+    if (typeof $rootScope.image === 'undefined') {
+        console.log('MainCtrl: No rootScope.image');
+        $scope.image = $scope.image1
+    }
+    else
+    {
+        console.log('MainCtrl: Found rootScope.image');
+        $scope.image = $rootScope.image
+    }
+
+    $scope.swicthPhoto = function() {
+        console.log('MainCtrl: swicthPhoto');
+        $scope.image = $scope.image2;
+        $rootScope.image   = $scope.image2;
+    }
   
   /*geolocation.getCurrentPosition(function (position) {
 	    alert('Latitude: '              + position.coords.latitude          + '\n' +

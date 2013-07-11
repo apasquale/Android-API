@@ -14,7 +14,7 @@ angular.module('assetsApp')
                     },
                     function captureError(error) {
                         var msg = 'An error occurred during capture: ' + error.code;
-                        alert(msg, null, 'Uh oh!');
+                        alert(msg);
                     },
                     {limit: 2}
                 );
