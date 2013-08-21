@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('assetsApp', []);
+var app = angular.module('assetsApp', ['LocalStorageModule']);
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -14,6 +14,14 @@ app.config(function ($routeProvider) {
       .when('/audio', {
         templateUrl: 'views/audio.html',
         controller: 'AudioCtrl'
+      })
+      .when('/notes', {
+        templateUrl: 'views/notes.html',
+        controller: 'NotesCtrl'
+      })
+      .when('/videos', {
+        templateUrl: 'views/videos.html',
+        controller: 'VideosCtrl'
       })
       .otherwise({
         redirectTo: '/'

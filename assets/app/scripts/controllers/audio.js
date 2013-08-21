@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('assetsApp')
-  .controller('AudioCtrl', function ($scope, audioSvc, $rootScope) {
+  .controller('AudioCtrl', function ($scope, audioSvc, localStorageService) {
     /*
     $scope.awesomeThings = [
 
@@ -9,14 +9,15 @@ angular.module('assetsApp')
       'AngularJS',
       'Karma'
     ];*/
-    if (typeof $rootScope.audiofiles === 'undefined') {
+    var audiofiles = localStorageService.get('audiofiles');
+    if (!audiofiles) {
         console.log('CameraCtrl: No rootScope.image');
         $scope.audiofiles = []
     }
     else
     {
         console.log('CameraCtrl: Found rootScope.image');
-        $scope.audiofiles = $rootScope.audiofiles
+        $scope.audiofiles = localStorageService.get('audiofiles')
     }
 
     $scope.captureAudio = function() {
@@ -25,7 +26,7 @@ angular.module('assetsApp')
         audioSvc.captureAudio().then(function(audioFiles) {
             console.log('AudioCtrl: Success');
             $scope.audiofiles = $scope.audiofiles.concat(audioFiles);
-            $rootScope.audiofiles = $scope.audiofiles;
+            localStorageService.add('audiofiles', $scope.audiofiles);
         }, function(reason) {
             console.log('AudioCtrl: Failed');
             alert('Failed: ' + reason);

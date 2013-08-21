@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
@@ -11,73 +11,82 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- build:css({.tmp,app}) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 </head>
-  <body ng-app="assetsApp">
-  	<h1>Index.Html</h1>
+<body ng-app="assetsApp">
+ <h1>Index.Html</h1>
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
+      <![endif]-->
 
     <!--[if lt IE 9]>
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+      <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+      <!-- Add your site or application content here -->
+      <a href="#/">Home</a>
+      <a href="#/camera">Camera</a>
+      <a href="#/audio">Audio</a> 
+      <a href="#/notes">Notes</a>
+      <a href="#/videos">Videos</a>
+      <br/>
+      <div class="container" ng-view=""></div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <script>
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src='//www.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-    
-    <script src="scripts/js/camera.js"></script>
-    <script src="scripts/js/audio.js"></script>
-    
-    <script src="bower_components/angular/angular.js"></script>
-    
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/camera.js"></script>
-    
-    <!-- endbuild -->
+          g.src='//www.google-analytics.com/ga.js';
+          s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+      
+      <script src="scripts/js/camera.js"></script>
+      <script src="scripts/js/audio.js"></script>
+      
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-localstorage/localStorageModule.js"></script>
+      
+      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+      <script src="scripts/app.js"></script>
+      <script src="scripts/controllers/main.js"></script>
+      <script src="scripts/controllers/camera.js"></script>
+      
+      <!-- endbuild -->
 
-        <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
-        <!-- endbuild -->
+      <!-- build:js scripts/plugins.js -->
+      <script src="bower_components/jquery/jquery.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
+      <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
+      <!-- endbuild -->
 
-        <!-- build:js scripts/modules.js -->
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <!-- build:js scripts/modules.js -->
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
          <!--<script src="scripts/services/phonegapReady.js"></script>
-        <script src="scripts/services/geolocation.js"></script> -->
-        <script src="scripts/services/camera.js"></script>
-        <script src="scripts/controllers/audio.js"></script>
-        <script src="scripts/services/audio.js"></script>
-        <!-- endbuild -->
-        
-        <script src="cordova.js"></script>
-        <script src="http://debug.phonegap.com/target/target-script-min.js#16450715-b547-4a5e-a443-17ecdae15dce"></script>
-</body>
-</html>
+         <script src="scripts/services/geolocation.js"></script> -->
+         <script src="scripts/services/camera.js"></script>
+         <script src="scripts/controllers/audio.js"></script>
+         <script src="scripts/services/audio.js"></script>
+         <script src="scripts/services/Notes.js"></script>
+         <script src="scripts/controllers/notes.js"></script>
+         <script src="scripts/controllers/videos.js"></script>
+         <!-- endbuild -->
+         
+         <script src="cordova.js"></script>
+     </body>
+     </html>

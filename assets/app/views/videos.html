@@ -1,0 +1,11 @@
+<div class="hero-unit">
+  This is the Videos view.<br/>
+
+  <div id="videofiles">
+    <div class="videofiles"  ng-repeat="videofile in videofiles" ng-click="setVideo(videofile.src)">
+      {{ videofile.name }} <br/>
+    </div>
+  </div>
+  <hr/>
+  <iframe width="560" height="315" src="{{ currentvideo }}" frameborder="0" allowfullscreen></iframe>
+</div>

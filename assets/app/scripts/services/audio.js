@@ -16,7 +16,7 @@ angular.module('assetsApp')
                         var msg = 'An error occurred during capture: ' + error.code;
                         alert(msg);
                     },
-                    {limit: 2}
+                    {limit: 1}
                 );
 
                 return deferred.promise;
