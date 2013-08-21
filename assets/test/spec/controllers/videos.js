@@ -16,7 +16,12 @@ describe('Controller: VideosCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach a list of videos to the scope', function () {
+    expect(scope.videofiles.length).toBe(3);
+  });
+
+  it('should set the video to the scope', function () {
+    scope.setVideo('http://www.youtube.com/embed/NyE1Kz0e--0');
+    expect(scope.currentvideo).toEqual('http://www.youtube.com/embed/NyE1Kz0e--0');
   });
 });
